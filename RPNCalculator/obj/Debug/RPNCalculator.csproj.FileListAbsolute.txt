@@ -1,0 +1,6 @@
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\bin\Debug\RPNCalculator.exe.config
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\obj\Debug\RPNCalculator.csprojResolveAssemblyReference.cache
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\bin\Debug\RPNCalculator.exe
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\bin\Debug\RPNCalculator.pdb
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\obj\Debug\RPNCalculator.exe
+F:\CSharp\ProgrammingPraxis\RPNCalculator\RPNCalculator\obj\Debug\RPNCalculator.pdb

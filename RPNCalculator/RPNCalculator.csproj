@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RPNArithmetic.cs" />
     <Compile Include="RPNCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPNParse.cs" />
+    <Compile Include="RPNStack.cs" />
     <Compile Include="RPNToken.cs" />
   </ItemGroup>
   <ItemGroup>
