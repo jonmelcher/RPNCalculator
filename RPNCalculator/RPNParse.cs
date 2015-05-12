@@ -30,10 +30,9 @@ namespace RPNCalculator
                 RPNToken temp = new RPNToken(s);
                 parsed.Add(temp);
 
-                if (!(temp.TokenType == RPNStack.Outputs.Double
-                    || temp.TokenType == RPNStack.Outputs.Operator))
+                if (!(temp.TokenType == Outputs.Double || temp.TokenType == Outputs.Operator))
                 {
-                    Console.WriteLine("line could not be parsed: {0}", line);
+                    Console.WriteLine("\n\nLine could not be parsed: {0}\n\n", line);
                     parsed.Clear();
                     break;
                 }
@@ -41,6 +40,5 @@ namespace RPNCalculator
 
             return parsed;
         }
-
     }
 }

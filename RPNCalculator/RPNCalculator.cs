@@ -3,7 +3,7 @@
 //                - Supports -, +, *, /, ^ operations
 //
 //  Written by Jonathan Melcher
-//  Last updated May 09, 2015
+//  Last updated May 11, 2015
 // *************************************************************************
 
 using System;
@@ -11,12 +11,11 @@ using System;
 
 namespace RPNCalculator
 {
-    // *****************************************************************************************
-    //  class RPNCalculator - contains methods for parsing strings and populating the RPN Stack,
-    //                        as well as a recursive reduction method for calculating the expre-
-    //                        ssion of the Stack.  Also contains methods for handling user inte-
-    //                        raction with the console application.
-    // *****************************************************************************************
+    // ***************************************************************************************
+    //  class RPNCalculator - console UI for combining RPNArithmetic and RPNParse into an RPN
+    //                        calculator.  Contains methods for handling user interaction with
+    //                        the console application.
+    // ***************************************************************************************
     class RPNCalculator : RPNParse
     {
         #region entrypoint
@@ -26,13 +25,13 @@ namespace RPNCalculator
         // **********
         static void Main(string[] args)
         {
-            // *********************************************************************
+            // ***********************************************************************************
             // Fields :
-            // rpnStack - Stack<RPNToken> containing RPN expression to be calculated
-            // previousCalculation - RPNToken storing previously calculated value
+            // calculator - RPNArithmetic handles math / management of the stored RPN expressions
+            // previousCalculation - RPNToken storing previously the previously reduced expression
             // userInput - ConsoleKey storing current userInput
-            // *********************************************************************
-            RPNStack stk = new RPNStack();
+            // ***********************************************************************************
+            RPNArithmetic calculator = new RPNArithmetic();
             RPNToken previousCalculation = new RPNToken("0");
             ConsoleKey userInput;
 
@@ -47,20 +46,20 @@ namespace RPNCalculator
                 {
                     case ConsoleKey.A:
                         Console.WriteLine();
-                        GetRPNExpression(stk);
+                        GetRPNExpression(calculator);
                         break;
                     case ConsoleKey.L:
                         Console.WriteLine(
                             "\n\nThe previous calculation was {0}.", previousCalculation);
                         break;
                     case ConsoleKey.C:
-                        CalculateAndDisplay(stk, out previousCalculation);
+                        CalculateAndDisplay(calculator, out previousCalculation);
                         break;
                     case ConsoleKey.S:
-                        stk.Display();
+                        calculator.Display();
                         break;
                     case ConsoleKey.X:
-                        stk.Clear();
+                        calculator.Clear();
                         break;
                 }
                 Console.Write("\nPress any key to continue...  ");
@@ -86,9 +85,9 @@ namespace RPNCalculator
             Console.Write("Please select an input:  ");
         }
 
-        private static void CalculateAndDisplay(RPNStack stk, out RPNToken previousCalculation)
+        private static void CalculateAndDisplay(RPNArithmetic calculator, out RPNToken previousCalculation)
         {
-            previousCalculation = stk.ReduceStack();
+            previousCalculation = calculator.ReduceStack();
             Console.WriteLine("\n\nThe calculated value is {0}.", previousCalculation);
         }
 
